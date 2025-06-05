@@ -12,7 +12,7 @@ function TaskManagement() {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks?page=${p}`, {
+      const res = await fetch(`https://webproject001.onrender.com/api/tasks?page=${p}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

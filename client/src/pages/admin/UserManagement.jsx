@@ -10,7 +10,7 @@ function UserManagement() {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('http://localhost:5000/api/users', {
+      const res = await fetch('https://webproject001.onrender.com/api/users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -27,7 +27,7 @@ function UserManagement() {
   const handleStatusChange = async (id, status) => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`/api/users/${id}/status`, {
+      const res = await fetch(`https://webproject001.onrender.com/api/users/${id}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ status })

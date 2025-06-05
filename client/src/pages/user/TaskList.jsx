@@ -14,7 +14,7 @@ function TaskList() {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks?page=${p}`, {
+      const res = await fetch(`https://webproject001.onrender.com/api/tasks?page=${p}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ function TaskList() {
   const handleCreate = async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('https://webproject001.onrender.com/api/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ title, description })
